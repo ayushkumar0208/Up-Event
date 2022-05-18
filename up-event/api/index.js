@@ -16,7 +16,7 @@ var encode = require( 'hashcode' ).hashCode;
 dotenv.config();
 
 mongoose.connect(
-  "mongodb+srv://aryaayush0208:20BCS9786@loginregister.qcwkx.mongodb.net/LoginRegister?retryWrites=true&w=majority",
+  "",
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("Connected to MongoDB");
