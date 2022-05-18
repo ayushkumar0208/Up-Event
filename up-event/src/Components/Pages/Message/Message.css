@@ -1,0 +1,48 @@
+.message-panel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: transparent;
+  }
+  
+  .messageTop{
+      display: flex;
+      background-color: rgb(49, 48, 48);
+      /* padding-top: 0.025vw; */
+  }
+  
+  
+  .messageText{
+      padding: 0.25vw;
+      border-radius: 0.2vw;
+      background-color: #468ff0;
+      color: white;
+      max-width: 8vw;
+      margin-bottom:0%;
+      word-break: break-all;
+    white-space: normal;
+      margin-left:0.5vw;
+      font-size: 0.90vw;
+  }
+  
+  .messageBottom{
+      font-size: 0.75vw;
+      margin:0%;
+      padding-top: 0%;
+      padding-left:0.5vw;
+      padding-right:0.5vw;
+      color:rgb(205, 207, 208);
+      background-color: rgb(49, 48, 48);
+  }
+  
+  .message-panel.own{
+      align-items: flex-end;
+      padding-right: 0.5vw;
+      background-color: rgb(49, 48, 48);
+  }
+  
+  .message-panel.own .messageText{
+      background-color: rgb(162, 158, 158);
+      color: black;
+      
+  }

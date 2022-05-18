@@ -1,0 +1,38 @@
+
+.features{
+  min-height: 100vh;
+}
+.features-container1,
+.features-container2 {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  margin-top: 2.75vw;
+}
+#features-img {
+  width: 40vw;
+}
+.features-title {
+  font-weight: 700;
+  font-size: 2.5vw;
+  letter-spacing: 0.1vw;
+  background: transparent;
+  padding: 0%;
+}
+.features-content {
+  font-weight: 400;
+  font-size: 1.5vw;
+  font-style: inherit;
+  letter-spacing: 0.15vw;
+  background: transparent;
+  padding: 0%;
+  color: rgb(128, 129, 129);
+}
+.features-text {
+  width: 35vw;
+  background: transparent;
+  /* text-align: center; */
+}

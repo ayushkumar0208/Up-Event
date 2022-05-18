@@ -1,0 +1,87 @@
+.footerBar{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    height:25vw;
+    position: sticky;
+    top:100%;
+}
+.footer-heading,.footer-img,.footer-options,.footer-main{
+    background: transparent;
+}
+
+.footer-main{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items:center;
+}
+.footer-options{
+    display: flex;
+    justify-content: space-evenly;
+    width:100%;
+}
+.footer-heading{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+#footer-image{
+    height:15vw;
+    background: transparent;
+    
+    
+}
+.footer-img{
+    position: relative;
+    vertical-align: bottom;
+    display: flex;
+    align-items: flex-end;
+}
+
+#footer-logo{
+    width:12vw;
+    background:transparent;
+}
+
+.line{
+    border-left: 2px solid rgb(219, 219, 219);
+    height: 80%;
+    top: 0;
+}
+.footer-option-heading{
+    background: transparent;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    font-size: 1.35vw;
+    letter-spacing: 0.1vw;
+}
+.footer-option1,.footer-option2{
+    background: white;
+    display:flex;
+    flex-direction: column;
+     
+}
+
+.footer-option{
+    background: white;
+    text-decoration: none;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    font-size: 1.15vw;
+    letter-spacing: 0.1vw;
+}
+.footer-option:hover{
+    color: blue;
+}
+.site-name{
+  font-weight: 500;
+  font-size: 2vw;
+  letter-spacing: 0.1vw;
+  background: transparent;
+  margin-top: 1vw;
+}
+.footer-option2{
+    display: flex;
+}

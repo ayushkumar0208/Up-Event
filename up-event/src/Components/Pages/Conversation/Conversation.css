@@ -1,0 +1,30 @@
+.conversation {
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
+    cursor: pointer;
+    height:5vh;
+    margin: 1vh;
+  border-radius: 1vh;
+  transition: 0.5s;
+    background-color: rgb(99, 98, 98);
+  }
+  
+  .conversation:hover {
+    background-color: rgb(75, 75, 75);
+    color:black
+  }
+  
+  .conversationName {
+    font-weight: 500;
+    color:white;
+    background-color: transparent;
+    margin-left: 0.5vw;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .conversationName {
+      display: none;
+    }
+  }
+  
