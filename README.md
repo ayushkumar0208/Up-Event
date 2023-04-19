@@ -1,6 +1,12 @@
 # Up-Event
 Up Event is a web-based application built with the MERN (MongoDB, Express, React, Node.js) stack, designed to provide users with the ability to host different types of events on a single platform. With Up Event, users can easily create and manage their events, invite attendees, and collaborate with them during the event with video-call, screen sharing, and chat functionalities.
 
+
+
+https://user-images.githubusercontent.com/71185961/233144702-d3bac40b-4ac8-45da-8aea-f48d7cd88b37.mp4
+
+
+
 ## Features
 
 * User authentication and authorization
