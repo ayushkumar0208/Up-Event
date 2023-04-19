@@ -16,3 +16,29 @@ Up Event is a web-based application built with the MERN (MongoDB, Express, React
 * Node.js: A JavaScript runtime environment used to execute server-side code.
 * Socket.io: A JavaScript library used to enable real-time communication between the server and client.
 * WebRTC: A set of protocols and APIs used for real-time communication over the web.
+
+## Getting Started
+
+### Prerequisites
+* Node.js v14 or higher
+* MongoDB server
+* Git
+
+### Installation
+1. Clone the repository using git clone https://github.com/ayushkumar0208/Up-Event.git
+2. Install the required dependencies using npm install
+3. Create a .env file in the project root directory with the following environment variables:
+```
+DATABSE=<your-mongodb-uri>
+BACKEND_PORT=<your-backend-port-number>
+```
+4. Run the development server using npm run dev
+
+
+### Usage
+1. Open http://localhost:3000 in your web browser.
+2. Register a new account or login with an existing one.
+3. Create a new event with event details and scheduling.
+4. Invite attendees by sharing the event link and event code.
+5. Host the event with video-call, screen sharing, and chat functionalities.
+
