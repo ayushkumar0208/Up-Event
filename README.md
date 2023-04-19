@@ -32,13 +32,13 @@ https://user-images.githubusercontent.com/71185961/233144702-d3bac40b-4ac8-45da-
 
 ### Installation
 1. Clone the repository using git clone https://github.com/ayushkumar0208/Up-Event.git
-2. Install the required dependencies using npm install
+2. Install the required dependencies using ```npm install```
 3. Create a .env file in the project up-event/api with the following environment variables:
 ```
 DATABSE=<your-mongodb-uri>
 BACKEND_PORT=<your-backend-port-number>
 ```
-4. Run the development server using npm run dev
+4. Run the development server using ```npm run dev```
 
 
 ### Usage
