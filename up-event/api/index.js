@@ -11,7 +11,6 @@ const conversationRoute = require("./routes/conversations");
 const messageRoute = require("./routes/messages");
 const path = require("path");
 const router = require("express").Router();
-var encode = require( 'hashcode' ).hashCode;
 
 dotenv.config();
 
