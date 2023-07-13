@@ -27,7 +27,11 @@ app.use("/images", express.static(path.join(__dirname, "public/images")));
 //middleware
 app.use(express.json());
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin:["https://up-event.vercel.app/"],
+  methods:["POST","GET"],
+  credentials:true
+}));
 app.use(morgan("common"));
 
 const storage = multer.diskStorage({
@@ -316,7 +320,6 @@ var xss = require("xss")//
 var server = http.createServer(app)//
 var io = require('socket.io')(server)//
 
-app.use(cors())//
 app.use(bodyParser.json())//
 app.use(function(req, res, next) {
 	res.header("Access-Control-Allow-Origin", "YOUR-DOMAIN.TLD"); // update to match the domain you will make the request from
