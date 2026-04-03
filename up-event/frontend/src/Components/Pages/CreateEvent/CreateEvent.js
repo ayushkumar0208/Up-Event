@@ -3,11 +3,12 @@ import "./CreateEvent.css";
 import axios from "axios";
 import NavMenu from "../../NavBar/NavMenu";
 import UserNotFound from "../ErrorPages/UserNotFound";
+import config from "../../../config";
 
 function CreateEvent(props) {
   useEffect(() => {
     function fetchData() {
-      fetch("http://localhost:8800/onGoingEvent")
+      fetch(`${config.API_SERVER}/onGoingEvent`)
         .then((response) => response.json())
         .then((data) => {
           array.push(...array);
@@ -63,7 +64,7 @@ function CreateEvent(props) {
       hostCode:code
     }
     axios
-      .post("http://localhost:8800/onGoingEvent", Obj)
+      .post(`${config.API_SERVER}/onGoingEvent`, Obj)
       .then((res) => {
         console.log("Got Data");
         console.log(array);

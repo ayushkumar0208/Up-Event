@@ -1,25 +1,35 @@
-# UpEvent
+# Up-Event Project Reorganization
 
-Online event hosting system is a best way to keep clients engaged with the service as they are on the move. As technology is growing rapidly we are also moving to a technical world where everything we want is to be online. The purpose of creating this project is to digitalize the processes involved in an event, also it is easy to access so one can access it anytime and anywhere and perform a manage an event. The system will be developed using React.js , Express.js ,Node.js , Socket.io , MongoDB.
+This project has been reorganized into a separate **Frontend** and **Backend** structure for better maintainability and separation of concerns.
 
+## Directory Structure
 
-### Significance of identification of project
- A virtual event is an online event that involves people interacting in a virtual environment on the web, rather than meeting in a physical location. Virtual events are typically multi-session online events that often feature webinars and webcasts. With the coronavirus pandemic affecting the entire world, it is very hard to host physical events and meeting However, virtual events are an alternative that actually comes with some added benefits. In this project, we have used technologies like React.js, Express.js, Node.js and MongoDB as database. All the detail analysis of features/characteristics and identified constraints have been done in first two points.
+- `frontend/`: React application.
+- `backend/`: Express server and API.
+- `package.json`: Root package file to orchestrate both.
 
-### Features
-- Create new Events and join with other using a unique Event Code.
-- Messaging chat and video streaming in real-time
-- Everyting is peer-to-peer using webrtc
+## Getting Started
 
+### 1. Install Dependencies
+Run from the root directory:
+```bash
+npm run install:all
+```
 
+### 2. Run the Application
+To run both backend and frontend concurrently:
+```bash
+npm run dev
+```
 
-### Local setup
-#### Front-End
-1. npm nstall
-2. npm start
+Alternatively, you can run them separately:
+- **Backend**: `cd backend && npm run dev`
+- **Frontend**: `cd frontend && npm start`
 
-#### Back-End
-1. cd .\api\
-2. npm install
-3. nodemon index.js
+## Backend Details
+- **Port 8800**: Main API (Authentication, Messages, Conversations).
+- **Port 4001**: WebRTC signaling and Socket.io.
 
+## Frontend Details
+- **Port 3000**: React development server.
+- **Proxy**: All API requests are proxied to `http://localhost:8800`.

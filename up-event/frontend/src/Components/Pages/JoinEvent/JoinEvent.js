@@ -3,6 +3,7 @@ import "./JoinEvent.css";
 import NavMenu from "../../NavBar/NavMenu";
 import UserNotFound from "../ErrorPages/UserNotFound";
 import axios from 'axios'
+import config from "../../../config";
 
 class JoinEvent extends React.Component {
 
@@ -12,7 +13,7 @@ class JoinEvent extends React.Component {
   };
 
   componentDidMount(){
-    fetch("http://localhost:8800/onGoingEvent").then(response=> response.json()).then(result=>{
+    fetch(`${config.API_SERVER}/onGoingEvent`).then(response=> response.json()).then(result=>{
         this.setState({
           activeEvents:result
         })
@@ -82,7 +83,7 @@ class JoinEvent extends React.Component {
       })
       this.props.setEventInfo(currentEvent)
 
-      axios.post("http://localhost:8800/participant",{
+      axios.post(`${config.API_SERVER}/participant`,{
         eventId:currentEvent.eventId,
         hostCode:currentEvent.hostCode,
         joinCode:url[0]+"-"+value,

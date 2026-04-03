@@ -6,6 +6,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import axios from "axios";
 import io from "socket.io-client";
+import config from "../../../config";
 
 export default function Messenger() {
   const [visible, setVisible] = useState(false);
@@ -20,7 +21,7 @@ export default function Messenger() {
   const scrollRef = useRef();
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io(config.CHAT_SERVER);
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
@@ -49,7 +50,7 @@ export default function Messenger() {
     const getConversations = async () => {
       try {
         console.log(user);
-        const res = await axios.get("http://localhost:8800/api/conversations/" + user._id);
+        const res = await axios.get(`${config.API_SERVER}/api/conversations/` + user._id);
         console.log(res);
         setConversations(res.data);
       } catch (err) {
@@ -62,7 +63,7 @@ export default function Messenger() {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/api/messages/" + currentChat?._id);
+        const res = await axios.get(`${config.API_SERVER}/api/messages/` + currentChat?._id);
         console.log(res);
         setMessages(res.data);
       } catch (err) {
@@ -91,7 +92,7 @@ export default function Messenger() {
     });
 
     try {
-      const res = await axios.post("http://localhost:8800/api/messages", message);
+      const res = await axios.post(`${config.API_SERVER}/api/messages`, message);
       setMessages([...messages, res.data]);
       setNewMessage("");
     } catch (err) {

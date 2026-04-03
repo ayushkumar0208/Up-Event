@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import NavMenu from "../../NavBar/NavMenu";
+import config from "../../../config";
 
 function Register(props) {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ function Register(props) {
   const registerUser = () => {
     const { name, email, password, reEnterPassword } = user;
     if (name && email && password && password === reEnterPassword) {
-      axios.post("http://localhost:8800/register", user).then((res) => {
+      axios.post(`${config.API_SERVER}/register`, user).then((res) => {
         navigate("/log-in");
       });
     } else {

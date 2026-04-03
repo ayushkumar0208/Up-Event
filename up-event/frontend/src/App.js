@@ -10,8 +10,13 @@ import CreateEvent from "./Components/Pages/CreateEvent/CreateEvent";
 import JoinEvent from "./Components/Pages/JoinEvent/JoinEvent";
 import Register from "./Components/Pages/Register/Register";
 import Error404 from "./Components/Pages/ErrorPages/Error404"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import "./App.css";
+
+const VideoWrapper = (props) => {
+  const { url } = useParams();
+  return <Video {...props} urlParam={url} />;
+};
 
 function App() {
   const [user, setLoginUser] = useState({});
@@ -22,9 +27,9 @@ function App() {
     const data = localStorage.getItem("User");
     const data2 = localStorage.getItem("Event")
     const data3 = localStorage.getItem("Code")
-    setLoginUser(JSON.parse(data));
-    setEventInfo(JSON.parse(data2))
-    setLink(JSON.parse(data3))
+    if (data) setLoginUser(JSON.parse(data));
+    if (data2) setEventInfo(JSON.parse(data2));
+    if (data3) setLink(JSON.parse(data3));
   }, []);
   useEffect(() => {
     localStorage.setItem("User", JSON.stringify(user));
@@ -57,7 +62,7 @@ function App() {
             path="/premium"
             element={<Premium user={user} setLoginUser={setLoginUser} />}
           />
-          <Route path="/event/:url" element={<Video user={user} event={event} setEventInfo={setEventInfo} Link={Link} setLink={setLink}/>} />
+          <Route path="/event/:url" element={<VideoWrapper user={user} event={event} setEventInfo={setEventInfo} Link={Link} setLink={setLink}/>} />
           <Route
             path="/log-in"
             element={<Login user={user} setLoginUser={setLoginUser} />}

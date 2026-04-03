@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from 'react'
+import config from "../../../config";
 import { useEffect, useState } from "react";
 import "./Conversation.css";
 
@@ -11,7 +12,7 @@ export default function Conversation({ conversation, currentUser }) {
     console.log(friendId)
     const getUser = async () => {
       try {
-        const res = await axios("http://localhost:8800/users/" + friendId);
+        const res = await axios(`${config.API_SERVER}/users/` + friendId);
         console.log(res)
         setUser(res.data);
       } catch (err) {

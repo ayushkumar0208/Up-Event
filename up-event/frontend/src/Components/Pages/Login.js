@@ -4,6 +4,7 @@ import "./Login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import NavMenu from "../NavBar/NavMenu";
+import config from "../../config";
 // const bcrypt = require("bcrypt");
 // import bcrypt from 'bcrypt'
 var encode = require("hashcode").hashCode;
@@ -33,14 +34,14 @@ function Login(props) {
     var found = false;
     // const salt = await bcrypt.genSalt(10);
 
-    fetch("http://localhost:8800/allusers")
+    fetch(`${config.API_SERVER}/allusers`)
       .then((response) => response.json())
       .then((result) => {
         result.forEach(function (ev) {
           if (ev.email.localeCompare(user.email) === 0) {
             found = true;
             if (ev.password.localeCompare(user.password) === 0) {
-              axios.post("http://localhost:8800/login", user).then((res) => {
+              axios.post(`${config.API_SERVER}/login`, user).then((res) => {
                 props.setLoginUser(res.data.user);
  
                 navigate("/");
